@@ -1,12 +1,11 @@
 ---
-name: tracer-bullets
-description: |
-  Use tracer bullet development to get immediate feedback on system architecture.
-  Build end-to-end functionality early to validate assumptions and reduce risk.
-  Triggers: new projects, uncertain requirements, architectural decisions, prototyping.
+title: Tracer Bullets
+impact: HIGH
+tags: incremental, feedback, architecture, prototyping
 ---
 
-# Tracer Bullets
+
+## Tracer Bullets
 
 ## Overview
 

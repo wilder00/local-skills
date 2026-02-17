@@ -8,12 +8,6 @@ Agent skills for pragmatic software development principles. Compatible with Clau
 npx skills add wilder00/local-skills
 ```
 
-### Install Specific Skills
-
-```bash
-npx skills add wilder00/local-skills --skill dry-principle
-```
-
 ### Install to Specific Agent
 
 ```bash
@@ -22,32 +16,37 @@ npx skills add wilder00/local-skills -a claude-code
 
 ## Available Skills
 
-### Core Principles
-- **dry-principle** - Don't Repeat Yourself
-- **orthogonality** - Decoupled, independent components
-- **reversibility** - Avoid irreversible decisions
-- **tracer-bullets** - Incremental development with immediate feedback
+### Pragmatic Programmer
 
-### Development Practices
-- **design-by-contract** - Preconditions, postconditions, and invariants
-- **defensive-programming** - Assertive programming and error handling
-- **refactoring-early** - Continuous code improvement
-- **prototype-to-learn** - Exploratory coding for learning
+Comprehensive guide with 12 rules across 3 categories:
 
-### Quality & Testing
-- **pragmatic-paranoia** - Defensive coding mindset
-- **test-driven-development** - Write tests first
-- **code-that-tests-easy** - Design for testability
-- **ruthless-testing** - Comprehensive testing strategies
+**Core Principles (4 rules)**
+- Don't Repeat Yourself (DRY)
+- Orthogonality
+- Reversibility
+- Tracer Bullets
+
+**Development Practices (4 rules)**
+- Design by Contract
+- Defensive Programming
+- Refactoring Early
+- Prototype to Learn
+
+**Quality & Testing (4 rules)**
+- Pragmatic Paranoia
+- Test-Driven Development
+- Code That Tests Easy
+- Ruthless Testing
 
 ## Usage
 
-Once installed, these skills are automatically available to your AI agent. The agent will load relevant skills based on your coding context and requests.
+Once installed, the skill is automatically available to your AI agent. The agent will load relevant rules based on your coding context.
 
 Example prompts:
 - "Review this code for DRY violations"
 - "Help me refactor this to be more orthogonal"
 - "Apply defensive programming to this function"
+- "Write tests for this using TDD"
 
 ## Compatible Agents
 

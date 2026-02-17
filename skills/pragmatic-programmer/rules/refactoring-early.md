@@ -1,12 +1,11 @@
 ---
-name: refactoring-early
-description: |
-  Refactor continuously as you learn, don't wait for code to rot.
-  Use when code smells emerge, requirements change, or understanding improves.
-  Triggers: duplication, complexity, unclear names, long functions, code review feedback.
+title: Refactoring Early
+impact: MEDIUM
+tags: refactoring, technical-debt, code-quality, maintenance
 ---
 
-# Refactoring Early
+
+## Refactoring Early
 
 ## Overview
 

@@ -1,12 +1,11 @@
 ---
-name: design-by-contract
-description: |
-  Define clear contracts with preconditions, postconditions, and invariants.
-  Use when designing APIs, functions, or class interfaces to establish expectations.
-  Triggers: unclear requirements, API design, validation, error handling, documentation.
+title: Design by Contract
+impact: MEDIUM
+tags: contracts, validation, preconditions, postconditions
 ---
 
-# Design by Contract
+
+## Design by Contract
 
 ## Overview
 

@@ -1,12 +1,11 @@
 ---
-name: reversibility
-description: |
-  Avoid irreversible architectural decisions by keeping options open.
-  Use when making technology choices, designing systems, or planning architecture.
-  Triggers: vendor lock-in, hard-coded dependencies, inflexible design, migration concerns.
+title: Reversibility
+impact: MEDIUM
+tags: flexibility, architecture, vendor-lock-in, abstraction
 ---
 
-# Reversibility
+
+## Reversibility
 
 ## Overview
 

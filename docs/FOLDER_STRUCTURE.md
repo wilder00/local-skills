@@ -12,56 +12,35 @@ local-skills/
 ├── docs/                                    # Developer documentation (not installed)
 │   ├── RESEARCH.md                          # Skills ecosystem research
 │   ├── ARCHITECTURE.md                      # Technical architecture decisions
-│   ├── SKILL_CREATION_GUIDE.md             # How to create new skills
+│   ├── SKILL_CREATION_GUIDE.md             # How to create new rules
 │   └── CONTRIBUTING.md                      # Contribution guidelines (future)
 │
 ├── skills/                                  # Installable skills directory
-│   │
-│   ├── dry-principle/                       # Don't Repeat Yourself
-│   │   └── SKILL.md
-│   │
-│   ├── orthogonality/                       # Decoupled components
-│   │   └── SKILL.md
-│   │
-│   ├── reversibility/                       # Avoid irreversible decisions
-│   │   └── SKILL.md
-│   │
-│   ├── tracer-bullets/                      # Incremental development
-│   │   └── SKILL.md
-│   │
-│   ├── design-by-contract/                  # Contracts and assertions
-│   │   └── SKILL.md
-│   │
-│   ├── defensive-programming/               # Assertive programming
-│   │   └── SKILL.md
-│   │
-│   ├── refactoring-early/                   # Continuous improvement
-│   │   └── SKILL.md
-│   │
-│   ├── prototype-to-learn/                  # Exploratory coding
-│   │   └── SKILL.md
-│   │
-│   ├── pragmatic-paranoia/                  # Defensive mindset
-│   │   └── SKILL.md
-│   │
-│   ├── test-driven-development/             # TDD practices
-│   │   └── SKILL.md
-│   │
-│   ├── code-that-tests-easy/                # Testability design
-│   │   └── SKILL.md
-│   │
-│   └── ruthless-testing/                    # Comprehensive testing
-│       └── SKILL.md
+│   └── pragmatic-programmer/                # Single skill (Vercel pattern)
+│       ├── SKILL.md                         # Main skill overview
+│       └── rules/                           # Individual rules
+│           ├── dry-principle.md
+│           ├── orthogonality.md
+│           ├── reversibility.md
+│           ├── tracer-bullets.md
+│           ├── design-by-contract.md
+│           ├── defensive-programming.md
+│           ├── refactoring-early.md
+│           ├── prototype-to-learn.md
+│           ├── pragmatic-paranoia.md
+│           ├── test-driven-development.md
+│           ├── code-that-tests-easy.md
+│           └── ruthless-testing.md
 │
 ├── .github/                                 # GitHub configuration (future)
 │   ├── workflows/
 │   │   └── validate-skills.yml             # CI to validate SKILL.md files
 │   └── ISSUE_TEMPLATE/
-│       └── skill-request.md                # Template for requesting new skills
+│       └── rule-request.md                 # Template for requesting new rules
 │
 ├── package.json                             # npm package metadata
 ├── README.md                                # User-facing documentation
-├── LICENSE                                  # License file (MIT recommended)
+├── LICENSE                                  # License file (MIT)
 ├── CHANGELOG.md                             # Version history
 └── .gitignore                               # Git ignore rules
 ```
@@ -78,9 +57,9 @@ local-skills/
 - Contribution guidelines
 
 ### `/skills` - Installable Skills
-**Purpose**: The core skills that agents will load  
-**Installed**: All subdirectories with SKILL.md files  
-**Structure**: Each skill is a self-contained directory
+**Purpose**: The core skill that agents will load  
+**Installed**: SKILL.md and rules/ directory  
+**Structure**: Single skill with multiple rules (Vercel pattern)
 
 ### `/.github` - Repository Automation
 **Purpose**: GitHub-specific configuration  
@@ -89,21 +68,23 @@ local-skills/
 
 ## Skill Directory Pattern
 
-Each skill follows this pattern:
+The skill follows Vercel's pattern:
 
 ```
-skill-name/
-├── SKILL.md                    # Required: Main skill content
-├── examples/                   # Optional: Extended examples
-│   ├── good-example.ts
-│   └── anti-pattern.ts
-├── scripts/                    # Optional: Executable tools
-│   └── analyze.py
-└── resources/                  # Optional: Additional docs
-    └── references.md
+pragmatic-programmer/
+├── SKILL.md                    # Required: Main skill overview
+└── rules/                      # Required: Individual rules
+    ├── dry-principle.md
+    ├── orthogonality.md
+    └── ... (10 more)
 ```
 
-**For initial release**: Keep it simple with just `SKILL.md` per skill.
+Each rule file contains:
+- YAML frontmatter (title, impact, tags)
+- Overview and explanation
+- TypeScript examples (good and bad)
+- Common pitfalls
+- Related concepts
 
 ## File Naming Conventions
 
@@ -118,37 +99,21 @@ skill-name/
 
 ## Installation Behavior
 
-When a user runs `npx skills add <owner>/local-skills`:
+When a user runs `npx skills add wilder00/local-skills`:
 
 1. **Discovery**: CLI scans `/skills` directory
-2. **Detection**: Finds all directories containing `SKILL.md`
-3. **Presentation**: Shows list of available skills
-4. **Selection**: User chooses which skills to install
-5. **Installation**: Copies/symlinks to agent-specific directories
+2. **Detection**: Finds pragmatic-programmer skill
+3. **Presentation**: Shows skill overview
+4. **Installation**: Copies/symlinks to agent-specific directories
 
 ### Example Installation Output
 
 ```
-Found 12 skills in <owner>/local-skills:
+Found 1 skill in wilder00/local-skills:
 
-  ✓ dry-principle
-  ✓ orthogonality
-  ✓ reversibility
-  ✓ tracer-bullets
-  ✓ design-by-contract
-  ✓ defensive-programming
-  ✓ refactoring-early
-  ✓ prototype-to-learn
-  ✓ pragmatic-paranoia
-  ✓ test-driven-development
-  ✓ code-that-tests-easy
-  ✓ ruthless-testing
+  ✓ pragmatic-programmer (12 rules)
 
-? Which skills would you like to install? (Use arrow keys and space to select)
-  ◉ All skills
-  ◯ Select specific skills
-
-? Which agents should receive these skills?
+? Which agents should receive this skill?
   ◉ Claude Code
   ◉ Cursor
   ◯ GitHub Copilot
@@ -158,7 +123,7 @@ Installing to:
   → ~/.claude/skills/
   → ~/.cursor/skills/
 
-✓ Successfully installed 12 skills
+✓ Successfully installed pragmatic-programmer
 ```
 
 ## Excluded from Installation

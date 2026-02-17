@@ -27,24 +27,22 @@ local-skills/
 ├── docs/
 │   ├── RESEARCH.md              # Ecosystem research findings
 │   ├── ARCHITECTURE.md          # This document
-│   └── SKILL_CREATION_GUIDE.md  # How to create new skills
+│   └── SKILL_CREATION_GUIDE.md  # How to create new rules
 ├── skills/
-│   ├── dry-principle/
-│   │   └── SKILL.md
-│   ├── orthogonality/
-│   │   └── SKILL.md
-│   ├── tracer-bullets/
-│   │   └── SKILL.md
-│   ├── design-by-contract/
-│   │   └── SKILL.md
-│   ├── defensive-programming/
-│   │   └── SKILL.md
-│   ├── refactoring-early/
-│   │   └── SKILL.md
-│   ├── prototype-to-learn/
-│   │   └── SKILL.md
-│   └── pragmatic-paranoia/
-│       └── SKILL.md
+│   └── pragmatic-programmer/    # Single skill (Vercel pattern)
+│       ├── SKILL.md             # Main skill overview
+│       └── rules/               # Individual rules
+│           ├── dry-principle.md
+│           ├── orthogonality.md
+│           ├── tracer-bullets.md
+│           ├── design-by-contract.md
+│           ├── defensive-programming.md
+│           ├── refactoring-early.md
+│           ├── prototype-to-learn.md
+│           ├── pragmatic-paranoia.md
+│           ├── test-driven-development.md
+│           ├── code-that-tests-easy.md
+│           └── ruthless-testing.md
 ├── package.json                 # Metadata for npm distribution
 ├── README.md                    # User-facing documentation
 └── .gitignore
@@ -57,6 +55,32 @@ local-skills/
 - **Consistent**: Follow same pattern across all skills
 
 ### SKILL.md Template
+
+Main skill file (following Vercel pattern):
+
+```markdown
+---
+name: skill-name
+description: |
+  Brief description with trigger keywords.
+---
+
+# Skill Name
+
+Overview and quick reference to all rules.
+
+## Rule Categories
+
+List of rule categories and their rules.
+
+## How to Use
+
+Reference to individual rule files in rules/ directory.
+```
+
+### Rule File Template
+
+Individual rule files in rules/ directory:
 
 ```markdown
 ---
@@ -104,7 +128,7 @@ Practical steps for applying this principle.
 
 ## Initial Skill Set
 
-Based on "The Pragmatic Programmer", the first release should include:
+The pragmatic-programmer skill contains 12 rules across 3 categories:
 
 ### Core Principles (Priority 1)
 1. **DRY Principle** - Don't Repeat Yourself

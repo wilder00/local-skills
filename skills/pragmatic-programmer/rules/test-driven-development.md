@@ -1,12 +1,11 @@
 ---
-name: test-driven-development
-description: |
-  Write tests before implementation to drive design and ensure correctness.
-  Use when building new features, fixing bugs, or refactoring code.
-  Triggers: new feature, bug fix, refactoring, unclear requirements, design decisions.
+title: Test-Driven Development
+impact: HIGH
+tags: tdd, testing, red-green-refactor, design
 ---
 
-# Test-Driven Development
+
+## Test-Driven Development
 
 ## Overview
 

@@ -1,12 +1,11 @@
 ---
-name: orthogonality
-description: |
-  Design orthogonal systems where components are independent and decoupled.
-  Use when architecting systems, refactoring coupled code, or designing APIs.
-  Triggers: tight coupling, cascading changes, hard to test, side effects.
+title: Orthogonality
+impact: HIGH
+tags: coupling, independence, modularity, design
 ---
 
-# Orthogonality
+
+## Orthogonality
 
 ## Overview
 

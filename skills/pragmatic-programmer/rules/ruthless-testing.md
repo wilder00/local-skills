@@ -1,12 +1,11 @@
 ---
-name: ruthless-testing
-description: |
-  Test thoroughly and systematically. Find bugs before your users do.
-  Use when building production systems, before releases, or fixing bugs.
-  Triggers: production deployment, bug reports, critical features, quality assurance.
+title: Ruthless Testing
+impact: CRITICAL
+tags: testing, quality-assurance, automation, coverage
 ---
 
-# Ruthless Testing
+
+## Ruthless Testing
 
 ## Overview
 

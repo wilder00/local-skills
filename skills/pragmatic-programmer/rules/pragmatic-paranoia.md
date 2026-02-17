@@ -1,12 +1,11 @@
 ---
-name: pragmatic-paranoia
-description: |
-  Adopt a defensive mindset: assume things will go wrong and code accordingly.
-  Use when building robust systems that handle failures gracefully.
-  Triggers: production systems, error handling, reliability, fault tolerance.
+title: Pragmatic Paranoia
+impact: HIGH
+tags: error-handling, resilience, fault-tolerance, defensive
 ---
 
-# Pragmatic Paranoia
+
+## Pragmatic Paranoia
 
 ## Overview
 

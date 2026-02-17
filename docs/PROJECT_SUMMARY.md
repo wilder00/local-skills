@@ -33,29 +33,29 @@ I've completed the research phase and created comprehensive documentation for yo
 - Scalability considerations
 - Validation rules
 
-## 🎯 Proposed Initial Skills (12 Total)
+## 🎯 Pragmatic Programmer Skill
 
-Based on "The Pragmatic Programmer":
+Single skill with 12 rules across 3 categories:
 
-### Core Principles
+### Core Principles (4 rules)
 1. **dry-principle** - Don't Repeat Yourself
 2. **orthogonality** - Decoupled, independent components
 3. **reversibility** - Avoid irreversible decisions
 4. **tracer-bullets** - Incremental development with feedback
 
-### Development Practices
+### Development Practices (4 rules)
 5. **design-by-contract** - Preconditions, postconditions, invariants
 6. **defensive-programming** - Assertive programming
 7. **refactoring-early** - Continuous code improvement
 8. **prototype-to-learn** - Exploratory coding
 
-### Quality & Testing
+### Quality & Testing (4 rules)
 9. **pragmatic-paranoia** - Defensive coding mindset
 10. **test-driven-development** - Write tests first
 11. **code-that-tests-easy** - Testability as design goal
 12. **ruthless-testing** - Comprehensive testing strategies
 
-## 🏗️ Proposed Structure
+## 🏗️ Current Structure
 
 ```
 local-skills/
@@ -64,27 +64,28 @@ local-skills/
 │   ├── ARCHITECTURE.md           ✅ Created
 │   └── FOLDER_STRUCTURE.md       ✅ Created
 ├── skills/                        # Installable skills
-│   ├── dry-principle/
-│   ├── orthogonality/
-│   ├── tracer-bullets/
-│   └── ... (9 more)
+│   └── pragmatic-programmer/     # Single skill (Vercel pattern)
+│       ├── SKILL.md              # Main skill file
+│       └── rules/                # 12 individual rules
+│           ├── dry-principle.md
+│           └── ... (11 more)
 ├── package.json                   # npm metadata
 ├── README.md                      # User documentation
-└── LICENSE                        # MIT recommended
+└── LICENSE                        # MIT License
 ```
 
 ## 🔧 How It Works
 
-Users will install skills via:
+Users install the skill via:
 ```bash
-npx skills add <your-username>/local-skills
+npx skills add wilder00/local-skills
 ```
 
 The CLI will:
-1. Discover all skills in the `/skills` directory
-2. Let users choose which skills to install
+1. Discover the pragmatic-programmer skill
+2. Install SKILL.md and rules/ directory
 3. Copy/symlink to agent-specific directories
-4. Skills become available to Claude Code, Cursor, GitHub Copilot, etc.
+4. Agent loads rules progressively as needed
 
 ## ❓ Questions Needing Your Input
 

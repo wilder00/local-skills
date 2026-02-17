@@ -1,12 +1,10 @@
 ---
-name: dry-principle
-description: |
-  Apply the DRY (Don't Repeat Yourself) principle to eliminate code duplication.
-  Use when refactoring repeated logic, creating abstractions, or reviewing code
-  for maintainability. Triggers: duplication, repeated code, copy-paste, similar logic.
+title: Don't Repeat Yourself (DRY)
+impact: HIGH
+tags: duplication, abstraction, maintainability, refactoring
 ---
 
-# DRY Principle
+## Don't Repeat Yourself (DRY)
 
 ## Overview
 

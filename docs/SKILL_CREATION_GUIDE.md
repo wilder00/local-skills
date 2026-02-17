@@ -1,86 +1,62 @@
-# Skill Creation Guide
+# Rule Creation Guide
 
-This guide explains how to create new skills for this repository following the Agent Skills specification.
+This guide explains how to add new rules to the pragmatic-programmer skill following the Vercel pattern.
 
 ## Quick Start
 
-1. Create a new directory under `/skills` with a kebab-case name
-2. Add a `SKILL.md` file with proper frontmatter
-3. Write clear, actionable content
-4. Test with at least one agent
-5. Update the main README
+1. Create a new file in `skills/pragmatic-programmer/rules/`
+2. Add frontmatter with title, impact, and tags
+3. Write clear, actionable content with TypeScript examples
+4. Update the main SKILL.md to reference the new rule
+5. Test with at least one agent
 
-## SKILL.md Template
+## Rule File Template
 
 ```markdown
 ---
-name: skill-name
-description: |
-  Brief description of what this skill teaches.
-  Include trigger keywords that help agents identify when to use this skill.
-  Keep it under 3-4 lines.
+title: Rule Name
+impact: HIGH
+tags: keyword1, keyword2, keyword3
 ---
 
-# Skill Name
+## Rule Name
 
 ## Overview
-Brief explanation of the concept (2-3 paragraphs).
+Brief explanation of the principle (2-3 paragraphs).
 
 ## When to Use
 - Specific scenario 1
 - Specific scenario 2
 - Specific scenario 3
 
-## Core Principles
-Key tenets of this concept:
-1. Principle 1
-2. Principle 2
-3. Principle 3
-
-## Implementation Guidelines
-
-### Step 1: [Action]
-Explanation...
-
-### Step 2: [Action]
-Explanation...
-
-### Step 3: [Action]
-Explanation...
-
 ## Examples
 
-### Good Example
-\`\`\`typescript
-// Code demonstrating the principle
-function goodExample() {
-  // Clear, well-structured code
-}
-\`\`\`
+### Anti-Pattern: Description
 
-**Why this works**: Explanation of what makes this good.
-
-### Anti-Pattern
 \`\`\`typescript
-// Code violating the principle
-function badExample() {
-  // Problematic code
-}
+// Bad code example
 \`\`\`
 
 **Why this fails**: Explanation of the problems.
+
+### Good Example: Description
+
+\`\`\`typescript
+// Good code example
+\`\`\`
+
+**Why this works**: Explanation of what makes this good.
 
 ## Common Pitfalls
 - Pitfall 1 and how to avoid it
 - Pitfall 2 and how to avoid it
 
 ## Related Concepts
-- [Related Skill 1](../related-skill-1/SKILL.md)
-- [Related Skill 2](../related-skill-2/SKILL.md)
+- [Related Rule 1](./related-rule-1.md)
+- [Related Rule 2](./related-rule-2.md)
 
 ## References
-- The Pragmatic Programmer (Hunt & Thomas)
-- Additional resources if applicable
+- Source material references
 ```
 
 ## Frontmatter Requirements
@@ -89,56 +65,40 @@ function badExample() {
 
 ```yaml
 ---
-name: skill-name
-description: |
-  Multi-line description.
-  Include trigger keywords.
+title: Human-Readable Rule Name
+impact: CRITICAL | HIGH | MEDIUM | LOW
+tags: keyword1, keyword2, keyword3
 ---
 ```
 
-### Optional Fields
+### Impact Levels
 
+- **CRITICAL**: Major performance or correctness issues
+- **HIGH**: Significant maintainability or robustness improvements
+- **MEDIUM**: Moderate improvements to code quality
+- **LOW**: Minor optimizations or advanced patterns
+
+## Writing Effective Titles and Tags
+
+### Good Title
 ```yaml
----
-name: skill-name
-description: |
-  Multi-line description.
-internal: false              # Set to true to hide from public listing
-allowed-tools:               # Restrict which tools agent can use
-  - fs_read
-  - fs_write
-context: default             # or "fork" for isolated context (Claude Code only)
----
-```
-
-## Writing Effective Descriptions
-
-The description is critical - it determines when agents load your skill.
-
-### Good Description
-```yaml
-description: |
-  Apply the DRY (Don't Repeat Yourself) principle to eliminate code duplication.
-  Use when refactoring repeated logic, creating abstractions, or reviewing code
-  for maintainability issues. Triggers: duplication, repeated code, copy-paste.
+title: Don't Repeat Yourself (DRY)
 ```
 
 **Why it works**:
-- Explains what the skill does
-- Lists when to use it
-- Includes trigger keywords
-- Concise but informative
+- Clear and descriptive
+- Includes acronym if applicable
+- Human-readable
 
-### Poor Description
+### Good Tags
 ```yaml
-description: |
-  This skill is about DRY.
+tags: duplication, abstraction, maintainability, refactoring
 ```
 
-**Why it fails**:
-- Too vague
-- No trigger keywords
-- Doesn't explain when to use it
+**Why it works**:
+- Relevant keywords
+- Helps agents find the rule
+- Covers different aspects
 
 ## Content Guidelines
 
@@ -159,45 +119,34 @@ description: |
 - **Use realistic scenarios**: Avoid contrived examples
 
 ### Length
-- **SKILL.md**: 200-500 lines for most skills
-- **If longer**: Split into multiple files
-- **If shorter**: Might be too simple to be a skill
+- **Rule file**: 200-500 lines for most rules
+- **If longer**: Consider splitting concepts
+- **If shorter**: Might need more examples or detail
 
 ## File Organization
 
-### Simple Skill (Most Common)
+### Simple Rule (Most Common)
 ```
-skill-name/
-└── SKILL.md
-```
-
-### Complex Skill
-```
-skill-name/
-├── SKILL.md                 # Core content
-├── examples/
-│   ├── typescript.md        # Language-specific examples
-│   ├── python.md
-│   └── rust.md
-├── scripts/
-│   └── analyze.py           # Executable tools
-└── resources/
-    └── advanced-topics.md   # Deep dives
+rules/
+└── new-rule.md
 ```
 
-## Testing Your Skill
+### Update Main SKILL.md
+Add reference to the new rule in the quick reference section.
+
+## Testing Your Rule
 
 ### Manual Testing
 
 1. **Install locally**:
    ```bash
-   npx skills add ./local-skills --skill your-skill-name -a claude-code
+   npx skills add ./local-skills -a claude-code
    ```
 
 2. **Test with agent**:
    - Open Claude Code (or your preferred agent)
-   - Ask a question that should trigger your skill
-   - Verify the agent loads and applies the skill correctly
+   - Ask a question that should trigger your rule
+   - Verify the agent loads and applies the rule correctly
 
 3. **Check for issues**:
    - Does the agent understand when to use it?
@@ -207,12 +156,13 @@ skill-name/
 ### Validation Checklist
 
 - [ ] YAML frontmatter is valid
-- [ ] `name` matches directory name
-- [ ] `description` includes trigger keywords
+- [ ] `title` is clear and descriptive
+- [ ] `impact` level is appropriate
+- [ ] `tags` are relevant
 - [ ] Content follows template structure
 - [ ] Code examples are correct and tested
 - [ ] Markdown renders properly
-- [ ] Links to related skills work
+- [ ] Links to related rules work
 - [ ] No spelling or grammar errors
 - [ ] Tested with at least one agent
 

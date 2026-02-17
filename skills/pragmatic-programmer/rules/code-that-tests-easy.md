@@ -1,12 +1,11 @@
 ---
-name: code-that-tests-easy
-description: |
-  Design code for testability from the start. Testable code is better code.
-  Use when architecting systems, writing functions, or refactoring for tests.
-  Triggers: hard to test, complex setup, mocking difficulties, slow tests.
+title: Code That Tests Easy
+impact: HIGH
+tags: testability, design, dependency-injection, pure-functions
 ---
 
-# Code That's Easy to Test
+
+## Code That's Easy to Test
 
 ## Overview
 

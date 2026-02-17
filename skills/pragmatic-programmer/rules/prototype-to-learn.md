@@ -1,12 +1,11 @@
 ---
-name: prototype-to-learn
-description: |
-  Build throwaway prototypes to explore ideas and reduce uncertainty.
-  Use when facing unknowns, evaluating technologies, or validating concepts.
-  Triggers: new technology, unclear requirements, proof of concept, experimentation.
+title: Prototype to Learn
+impact: MEDIUM
+tags: prototyping, learning, experimentation, risk-reduction
 ---
 
-# Prototype to Learn
+
+## Prototype to Learn
 
 ## Overview
 

@@ -1,12 +1,11 @@
 ---
-name: defensive-programming
-description: |
-  Write assertive code that validates assumptions and fails fast on errors.
-  Use when handling external input, integrating systems, or dealing with uncertainty.
-  Triggers: error handling, validation, null checks, edge cases, robustness.
+title: Defensive Programming
+impact: HIGH
+tags: validation, error-handling, robustness, assertions
 ---
 
-# Defensive Programming
+
+## Defensive Programming
 
 ## Overview
 
